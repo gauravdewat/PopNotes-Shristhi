@@ -83,7 +83,7 @@ public class CameraActivity extends AppCompatActivity implements CvCameraViewLis
             InputStream ts = getResources().openRawResource(R.raw.trianglesclassifier);
             File trianglesDir = getDir("cascade", Context.MODE_PRIVATE);
             File mtrianglesFile = new File(trianglesDir, "trianglesclassifier.xml");
-            FileOutputStream tos = new FileOutputStream(trianglesDir);
+            FileOutputStream tos = new FileOutputStream(mtrianglesFile);
 
             byte[] buffer = new byte[4096];
             int bytesRead;
@@ -94,14 +94,14 @@ public class CameraActivity extends AppCompatActivity implements CvCameraViewLis
             tos.close();
 
             // Load the cascade classifier
-            triangleClassifier = new CascadeClassifier(trianglesDir.getAbsolutePath());
-            triangleClassifier.load(trianglesDir.getAbsolutePath());
+            triangleClassifier = new CascadeClassifier(mtrianglesFile.getAbsolutePath());
+            triangleClassifier.load(mtrianglesFile.getAbsolutePath());
 
 
             InputStream hs = getResources().openRawResource(R.raw.heartclassifier);
             File heartDir = getDir("cascade", Context.MODE_PRIVATE);
             File mheartsFile = new File(heartDir, "heartclassifier.xml");
-            FileOutputStream hos = new FileOutputStream(heartDir);
+            FileOutputStream hos = new FileOutputStream(mheartsFile);
 
             byte[] buffer1 = new byte[4096];
             int bytesRead1;
@@ -112,13 +112,13 @@ public class CameraActivity extends AppCompatActivity implements CvCameraViewLis
             hos.close();
 
             // Load the cascade classifier
-            heartClassifier = new CascadeClassifier(trianglesDir.getAbsolutePath());
-            heartClassifier.load(trianglesDir.getAbsolutePath());
+            heartClassifier = new CascadeClassifier(mheartsFile.getAbsolutePath());
+            heartClassifier.load(mheartsFile.getAbsolutePath());
 
             InputStream cs = getResources().openRawResource(R.raw.circlesclassifier);
             File circleDir = getDir("cascade", Context.MODE_PRIVATE);
             File mcircleFile = new File(circleDir, "circlesclassifier.xml");
-            FileOutputStream cos = new FileOutputStream(circleDir);
+            FileOutputStream cos = new FileOutputStream(mcircleFile);
 
             byte[] buffer2 = new byte[4096];
             int bytesRead2;
@@ -129,8 +129,8 @@ public class CameraActivity extends AppCompatActivity implements CvCameraViewLis
             cos.close();
 
             // Load the cascade classifier
-            circleClassifier = new CascadeClassifier(trianglesDir.getAbsolutePath());
-            circleClassifier.load(trianglesDir.getAbsolutePath());
+            circleClassifier = new CascadeClassifier(mheartsFile.getAbsolutePath());
+            circleClassifier.load(mcircleFile.getAbsolutePath());
 
         } catch (Exception e) {
             Log.d("CameraActivity", "Error loading cascade", e);
@@ -187,7 +187,6 @@ public class CameraActivity extends AppCompatActivity implements CvCameraViewLis
         paint.setStrokeWidth(getResources().getDisplayMetrics().density * 2);
 
         bg = new Paint();
-        bg.setTextSize(getResources().getDisplayMetrics().density * 12);
         bg.setColor(Color.WHITE);
 
         txt = new Paint();
@@ -248,7 +247,7 @@ public class CameraActivity extends AppCompatActivity implements CvCameraViewLis
         }
 
         if (circleClassifier != null) {
-            circleClassifier.detectMultiScale(mGray, circles, 1.1, 2, 3,
+            circleClassifier.detectMultiScale(mGray, circles, 1.1, 1, 3,
                     new Size(mAbsoluteTriSize, mAbsoluteTriSize), new Size());
         }
 
