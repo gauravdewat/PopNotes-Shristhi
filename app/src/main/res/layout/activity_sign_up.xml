@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/bag"
+    android:orientation="vertical">
+
+
+
+    <ImageView
+        app:layout_heightPercent="50%"
+        app:layout_widthPercent="50%"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/paper_plane"
+        android:id="@+id/fragmentloginLogo"
+        android:alpha="1"/>
+    <ScrollView
+        android:layout_width="match_parent"
+
+        app:layout_marginTopPercent="45%"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/form_login"
+            android:padding="30dp"
+            android:alpha="1">
+
+
+            <EditText
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:ems="10"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="20sp"
+                android:textColor="#FFFFFF"
+                android:id="@+id/Username"
+                android:hint="Username"
+                android:textColorHint="#808080"
+                android:typeface="serif"/>
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:layout_below="@id/Username"
+                android:background="#FFFFFF"
+                android:layout_marginTop="@dimen/login_horizontalline_spacing"/>
+
+
+            <EditText
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:ems="10"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="20sp"
+                android:layout_below="@+id/Username"
+
+                android:layout_marginTop="20dp"
+                android:textColor="#FFFFFF"
+                android:id="@+id/Email"
+                android:hint="Email"
+                android:textColorHint="#808080"
+                android:typeface="serif"/>
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:layout_below="@id/Email"
+                android:background="#FFFFFF"
+                android:layout_marginTop="@dimen/login_horizontalline_spacing"/>
+
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:ems="10"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="20sp"
+                android:layout_below="@+id/Email"
+                android:textColor="#FFFFFF"
+                android:id="@+id/Password"
+                android:layout_marginTop="20dp"
+                android:hint="Password"
+                android:textColorHint="#808080"
+                android:typeface="serif"/>
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:layout_below="@id/Password"
+                android:background="#FFFFFF"
+                android:layout_marginTop="@dimen/login_horizontalline_spacing"/>
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="match_parent"
+                android:ems="10"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:textSize="20sp"
+                android:layout_below="@+id/Password"
+                android:textColor="#FFFFFF"
+                android:id="@+id/cnfmPassword"
+                android:layout_marginTop="20dp"
+                android:hint="Confirm Password"
+                android:textColorHint="#808080"
+                android:typeface="serif"/>
+
+            <View
+                android:layout_height="1dp"
+                android:layout_width="match_parent"
+                android:layout_below="@id/cnfmPassword"
+                android:background="#FFFFFF"
+                android:layout_marginTop="@dimen/login_horizontalline_spacing"/>
+            <Button
+                android:id="@+id/register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/swooch_button"
+                android:layout_below="@id/cnfmPassword"
+                android:layout_marginTop="40dp"
+                android:text="register"
+                android:textColor="#dfffff"/>
+
+        </RelativeLayout>
+    </ScrollView>
+
+
+</android.support.percent.PercentRelativeLayout>

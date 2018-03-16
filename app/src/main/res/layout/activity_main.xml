@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.mon00b.popnotes.Main">
+
+
+    <com.flaviofaria.kenburnsview.KenBurnsView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:src="@drawable/bg7"
+        android:id="@+id/background"/>
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        app:title="PopNotes"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark"
+        app:titleTextColor="#ffffff">
+
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:background="#000000"
+        android:layout_marginTop="55dp"
+        android:alpha="0"
+        android:id="@+id/view"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/srchBtn"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="300dp"
+            android:background="@drawable/button"
+            android:text="search notes"
+            android:textColor="#ffffff" />
+
+        <Button
+            android:id="@+id/addBtn"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button"
+            android:text="add Notes"
+            android:textColor="#ffffff" />
+    </LinearLayout>
+
+</android.support.design.widget.CoordinatorLayout>
